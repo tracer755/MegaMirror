@@ -1,0 +1,12 @@
+.notifboxdown{
+    position: fixed; 
+    top: 2vw; 
+    width: 100%;
+    transition: 1s;
+}
+.notifboxup{
+    position: fixed; 
+    top: -15vw; 
+    width: 100%;
+    transition: 1.7s;
+}

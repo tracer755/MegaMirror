@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <style>
+        .flex-container {
+      display: flex;
+      flex-direction: row;
+    }
+    .centerpadding {
+      padding: 6px;
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+    }
+    
+    h1, h2, h3, h4, blockquote, q, .maia-nav ul {
+      font-family: 'open sans',arial,sans-serif;
+      font-weight: 470;
+    }
+    #background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+    </style>
+    
+    <link rel="stylesheet" href="css/fade.css">
+    <link rel="stylesheet" href="css/alert.css">
+</head>
+<body style="background-color: black; cursor: none; overflow: hidden;">
+
+  <video id="background-video" autoplay loop muted>
+    <source src="output.mp4" type="video/mp4">
+  </video>
+
+      <div style="width:99%; height:98vh; position:absolute;">
+        <div class="flex-container">
+          <div id="Weather" style="margin: 0; width: 50%; margin-left: 25px; height: 50%; transform: scale(0.8); position: relative; top:-8vw; right:5vw;">
+            
+          </div>
+
+          <div id="datetime" style="float: right; margin-right: 20px; width: 50%; transform: scale(0.9); position: relative; top:-4vw; right:-2vw;">
+          
+          </div>
+        </div>
+        <center>
+        <div id="demotext" style="position: fixed;bottom: 0;width: 100%;">
+          
+        </div>
+        <div id="NotificationWrapper" class="notifboxup">
+          <div style="background-color: black; max-width:45vw; border-radius: 25px; padding: .1px; border: .1vw solid white;">
+            <h2 id="notifmsg" style="color: white">null</h2>
+          </div>
+        </div>
+        </center>
+      </div>
+      
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script type="text/javascript" src="Modules/DateTime.js"></script>
+    <script type="text/javascript" src="Modules/Weather.js"></script>
+    <script type="text/javascript" src="Modules/DemoText.js"></script>
+    <script type="text/javascript" src="Modules/Alert.js"></script>
+    <!--start services-->
+    <script>
+      refreshweather();
+      setdttext();
+      startdemotext();
+    </script>
+</body>
+</html>

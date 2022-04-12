@@ -1,2 +1,0 @@
-# MegaMirror
-Smart Mirror software
