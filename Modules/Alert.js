@@ -5,15 +5,6 @@ var notifactive = false;
 
 var msgqueue = [];
 
-function testnotif(){
-    notificationAlert('test');
-    notificationAlert('New pc part');
-    notificationAlert('Joe Bidome');
-    notificationAlert(`Homebrew wii's are cool`);
-    notificationAlert('russia has now commited multiple warcrimes');
-    notificationAlert('New Email');
-}
-
 function notificationAlert(msg){
     if(notifactive){
         msgqueue.push(msg);

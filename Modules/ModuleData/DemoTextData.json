@@ -1,0 +1,26 @@
+{
+    "anytime" : [
+        "Hey there sexy!",
+        "Wow, you look hot!",
+        "You look sexy!"
+    ],
+    "morning" : [
+        "Good morning, sunshine!",
+        "Who needs coffee when you have your smile?",
+        "Go get 'em, Tiger!",
+        "How was your sleep?",
+        "Good morning, handsome!",
+        "Looking good today!",
+        "Enjoy your day!"
+    ],
+    "afternoon" : [
+        "Hitting your stride!",
+        "You are making a difference!",
+        "You're more fun than bubble wrap!"
+    ],
+    "evening" : [
+        "You made someone smile today, I know it.",
+        "You are making a difference.",
+        "The day was better for your efforts."
+    ]
+}

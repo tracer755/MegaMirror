@@ -10,9 +10,9 @@ const day = today.getDay();
 var options = { weekday: 'long'};
 
 wrapper.innerHTML = `
-<h1 style="color: white; font-size: 4.3vw; text-align: right;" id="daytext"></h1>
-<h1 style="color: white; font-size: 4.3vw; text-align: right; position: relative; top:-27.5px;" id="datetext"></h1>
-<h1 style="color: white; font-size: 5.5vw; text-align: right; position: relative; top:-55px; letter-spacing: 2px;" id="timetext"></h1>
+<h1 style="color: white; font-size: 90px; text-align: right;" id="daytext"></h1>
+<h1 style="color: white; font-size: 90px; text-align: right; position: relative; bottom:60px;" id="datetext"></h1>
+<h1 style="color: white; font-size: 140px; text-align: right; position: relative; bottom:140px; letter-spacing: 2px;" id="timetext"></h1>
 `;
 
 wrapper.querySelector("#daytext").innerHTML = new Intl.DateTimeFormat('en-US', options).format(today);
