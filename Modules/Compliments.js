@@ -1,5 +1,5 @@
 let divid = "demotext";
-var changetime = 5;
+var changetime = 25;
 
 var jsonresponse;
 
@@ -13,7 +13,6 @@ var afternoonEndTime = 17;
 
 axios.get('http://localhost:3000/textdemo')
 .then(response => {
-    console.log(response.data);
     jsonresponse = response.data;
 });
 
@@ -63,26 +62,46 @@ function generatePosibleMsgArray(){
 
     //check times
     if(hour >= morningStartTime && hour < morningEndTime){
-        console.log('morning');
+
         var arrayLength = jsonresponse.morning.length;
         for (var i = 0; i < arrayLength; i++) {
             posiblemsgs.push(jsonresponse.morning[i]);
         }
     }
     if(hour >= afternoonStartTime && hour < afternoonEndTime){
-        console.log('afternoon');
+
         var arrayLength = jsonresponse.afternoon.length;
         for (var i = 0; i < arrayLength; i++) {
             posiblemsgs.push(jsonresponse.afternoon[i]);
         }
     }
     if(hour >= afternoonEndTime && hour > morningStartTime){
-        console.log('evening');
+
         var arrayLength = jsonresponse.evening.length;
         for (var i = 0; i < arrayLength; i++) {
             posiblemsgs.push(jsonresponse.evening[i]);
         }
     }
-
-    return(posiblemsgs[Math.floor(Math.random()*posiblemsgs.length)]);
+    if(posiblemsgs.length > 1){
+        var looplatch = true;
+        var msg;
+        while(looplatch){
+            var tmp = posiblemsgs[Math.floor(Math.random()*posiblemsgs.length)];
+            var wrapper = document.getElementById(divid); 
+            if(tmp != wrapper.querySelector("#demomsgtext").innerHTML){
+                msg = tmp;
+                looplatch = false;
+            }
+            
+        }
+        return(msg);
+    }
+    else{
+        return(posiblemsgs[0]);
+    }
 }
+
+axios.get('http://localhost:3000/logmodstart:' + "Compliments")
+.then(response => {
+    
+});

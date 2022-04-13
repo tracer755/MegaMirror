@@ -29,3 +29,8 @@ wrapper.querySelector("#datetext").innerHTML = new Intl.DateTimeFormat('en-US', 
 wrapper.querySelector("#timetext").innerHTML = today.toLocaleString('en-US', { hour: 'numeric', minute:'numeric' , hour12: true });
 setTimeout(() => {  setdttext(); }, 1000);
 }
+
+axios.get('http://localhost:3000/logmodstart:' + "DateTime")
+.then(response => {
+    
+});

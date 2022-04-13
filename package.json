@@ -3,14 +3,15 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "fs": "^0.0.1-security",
-    "open": "^8.4.0"
+    "open": "^8.4.0",
+    "voice-recognition": "^1.0.6"
   },
   "name": "megamirror",
   "version": "1.0.0",
   "description": "Smart Mirror Software",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./app.js"
   },
   "author": "BulletDrop Studios",
   "license": "ISC"

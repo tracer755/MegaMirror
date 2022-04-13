@@ -41,3 +41,8 @@ if(msgqueue.length != 0){
     notificationAlert(i);
 }
 }
+
+axios.get('http://localhost:3000/logmodstart:' + "Notification")
+.then(response => {
+    
+});

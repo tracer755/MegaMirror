@@ -11,9 +11,10 @@ const port = 3000;
 
 
 //add external helper modules here
-require('./Modules/Helper Modules/DemoTextBackend.js')(app);
+require('./Modules/Helper Modules/ComplimentsBackend.js')(app);
+require('./Modules/Helper Modules/Logging.js')(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port https://localhost:${port}`);
+  console.log(`Backend started at https://localhost:${port}`);
   open('index.html');
 })
