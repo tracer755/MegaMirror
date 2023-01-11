@@ -4,7 +4,7 @@
 <head>
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <style>
-        .flex-container {
+    .flex-container {
       display: flex;
       flex-direction: row;
     }
@@ -18,22 +18,23 @@
       font-weight: 400;
       src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
     }
-    
+
     h1, h2, h3, h4, blockquote, q, .maia-nav ul {
       font-family: 'open sans',arial,sans-serif;
       font-weight: 470;
+      white-space: nowrap;
     }
     #background-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-}
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
     </style>
     
     <link rel="stylesheet" href="css/fade.css">
@@ -42,7 +43,7 @@
 <body style="background-color: black; cursor: none; overflow: hidden;">
 
   <video id="background-video" autoplay loop muted>
-    <source src="output.mp4" type="video/mp4">
+    <!--<source src="output.mp4" type="video/mp4">-->
   </video>
 
       <div style="width:99%; height:98vh; position:absolute;" id="backer">
