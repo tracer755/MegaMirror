@@ -1,5 +1,5 @@
 let weatherdivid = "Weather";
-var place = "Denver"; //page will not work if the name of the place is wrong
+var place = "4055577"; //page will not work if the name of the place is wrong
 const key = "e9b4530b132be47b2c2c3d665e43ca50";
 
 var wrapper = document.getElementById(weatherdivid);
@@ -20,25 +20,28 @@ function refreshweather(){
 
     var wrapper = document.getElementById(weatherdivid);
 
-
     
+    var url = "https://api.openweathermap.org/data/2.5/weather"
 
-    wrapper.querySelector("#Placetext").innerHTML = place;
-
-    //get current weather
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${key}&units=imperial`)
+    if(parseInt(place) != "NaN"){
+        url += `?id=${parseInt(place)}&appid=${key}&units=imperial`;
+    }
+    else{
+        url += `?q=${place}&appid=${key}&units=imperial`;
+    }
+    //get current weather `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${key}&units=imperial`
+    axios.get(url)
     .then(response => {
         weatherjson = response.data;
         wrapper.querySelector("#weatherimg").src = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${response.data.weather[0]["icon"]}.svg`;
         wrapper.querySelector("#weatherdesc").innerHTML = capitalize(response.data.weather[0].description);
         wrapper.querySelector("#currenttemptext").innerHTML = Math.round(response.data.main.temp) + `<span>&#176;</span>`;
         wrapper.querySelector("#maxmintemptext").innerHTML = Math.round(response.data.main.temp_max) + `<span>&#176;</span>` + " " + Math.round(response.data.main.temp_min) + `<span>&#176;</span>`;
+        wrapper.querySelector("#Placetext").innerHTML = response.data.name;
     })
-
 
 setTimeout(() => {  refreshweather(); }, 30000);
 }
-
 function capitalize(input) {  
     var words = input.split(' ');  
     var CapitalizedWords = [];  
@@ -47,8 +50,6 @@ function capitalize(input) {
     });  
     return CapitalizedWords.join(' ');  
 } 
-
-
 axios.get('http://localhost:3000/logmodstart:' + "Weather")
 .then(response => {
     
